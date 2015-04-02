@@ -5,6 +5,12 @@ use Symfony\Component\Config\Loader\LoaderInterface;
 
 class AppKernel extends Kernel
 {
+    /**
+     * Register Bundles
+     *
+     * @access public
+     * @return array
+     */
     public function registerBundles()
     {
         $bundles = array(
@@ -29,8 +35,27 @@ class AppKernel extends Kernel
         return $bundles;
     }
 
+    /**
+     * Register Container Configuration
+     *
+     * @access public
+     * @param \Symfony\Component\Config\Loader\LoaderInterface $loader
+     * @return void
+     */
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
-        $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
+        $loader->load(
+            file_exists($config = __DIR__ . '/config/config_' . $this->getEnvironment() . '.yml')
+                ? $config
+                : __DIR__ . '/config/config.yml'
+        );
+        // Now we have loaded our configuration (and more importantly, parameters) - reload all environmental variables
+        // named for Symfony into the parameter bag so that we can override the configuration quickly in an emergancy
+        // without amending any application files (which may be specific to the current installation).
+        // Don't forget to clear the cache after changing the environmental variables!
+        $envParameters = $this->getEnvParameters();
+        $loader->load(function ($container) use ($envParameters) {
+            $container->getParameterBag()->add($envParameters);
+        });
     }
 }
