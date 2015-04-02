@@ -1,0 +1,10 @@
+{
+    "author": {
+        "name":  "Zander Baldwin",
+        "email": "hello@zanderbaldwin.com",
+        "url":   "http://zanderbaldwin.com"
+    },
+    "dependencies": {
+        "less":  "~1"
+    }
+}
