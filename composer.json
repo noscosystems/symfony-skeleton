@@ -44,6 +44,7 @@
 
         "phpunit/phpunit": "~4.5",
         "phpunit/php-invoker": "~1.1",
+        "humbug/humbug": "*",
 
         "behat/behat": "~3.0",
         "behat/symfony2-extension": "~2.0"
