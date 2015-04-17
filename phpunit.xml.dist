@@ -34,6 +34,7 @@
     <!-- PHP Configuration. -->
     <php>
         <server name="KERNEL_DIR" value="app/" />
+        <ini name="error_reporting" value="-1" />
         <ini name="date.timezone" value="Europe/London" />
     </php>
 
