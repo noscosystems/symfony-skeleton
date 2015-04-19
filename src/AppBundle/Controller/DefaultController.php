@@ -14,7 +14,6 @@ class DefaultController extends Controller
      * Action: Homepage
      *
      * @access public
-     * @Route("/")
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -65,11 +64,11 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route(
-     *   name="make_homepage",
-     *   pattern="/_cms/make_homepage/{id}",
-     *   requirements={"id": ".+"}
-     * )
+     * Make Homepage
+     *
+     * @access public
+     * @param integer $id
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function makeHomepageAction($id)
     {

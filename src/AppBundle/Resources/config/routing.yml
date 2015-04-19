@@ -1,0 +1,7 @@
+homepage:
+    path: /
+    defaults: { _controller: AppBundle:Default:index }
+
+make_homepage:
+    path: /_cms/make_homepage/{id}
+    defaults: { _controller: AppBundle:Default:makeHomepage }
