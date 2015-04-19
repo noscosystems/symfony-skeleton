@@ -12,4 +12,33 @@ use Knp\Menu\NodeInterface as MenuNodeInterface;
 class Page implements RouteReferrersReadInterface, MenuNodeInterface
 {
     use ContentTrait;
+
+    /**
+     * @PHPCR\Children()
+     */
+    protected $children;
+
+    public function getName()
+    {
+        return $this->title;
+    }
+
+    public function getChildren()
+    {
+        return $this->children;
+    }
+
+    public function getOptions()
+    {
+        return array(
+            'label' => $this->title,
+            'content' => $this,
+
+            'attributes'         => [],
+            'childrenAttributes' => [],
+            'displayChildren'    => true,
+            'linkAttributes'     => [],
+            'labelAttributes'    => [],
+        );
+    }
 }

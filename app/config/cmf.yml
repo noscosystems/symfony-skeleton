@@ -73,3 +73,6 @@ sonata_doctrine_phpcr_admin:
                 - AppBundle\Document\Post
         AppBundle\Document\Post:
             valid_children: []
+
+knp_menu:
+    twig: true
