@@ -52,6 +52,16 @@ class AppKernel extends Kernel
 
             new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle,
             new Symfony\Cmf\Bundle\RoutingAutoBundle\CmfRoutingAutoBundle,
+
+            new Knp\Bundle\MenuBundle\KnpMenuBundle,
+            new Sonata\CoreBundle\SonataCoreBundle,
+            new Sonata\jQueryBundle\SonatajQueryBundle,
+            new Sonata\BlockBundle\SonataBlockBundle,
+            new Sonata\AdminBundle\SonataAdminBundle,
+            new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle,
+
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle,
+            new Symfony\Cmf\Bundle\TreeBrowserBundle\CmfTreeBrowserBundle,
         ];
     }
 
