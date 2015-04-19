@@ -49,6 +49,9 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle,
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle,
             new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle,
+
+            new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle,
+            new Symfony\Cmf\Bundle\RoutingAutoBundle\CmfRoutingAutoBundle,
         ];
     }
 

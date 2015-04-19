@@ -1,0 +1,46 @@
+doctrine_cache:
+    providers:
+        phpcr_meta:
+            type: file_system
+        phpcr_nodes:
+            type: file_system
+
+doctrine_phpcr:
+    odm:
+        auto_mapping: true
+        auto_generate_proxy_classes: "%kernel.debug%"
+    session:
+        backend:
+            type: doctrinedbal
+            # The following requires DoctrineCacheBundle, and providers
+            # registered as services.
+            caches:
+                meta: doctrine_cache.providers.phpcr_meta
+                nodes: doctrine_cache.providers.phpcr_nodes
+            # Enable logging.
+            logging: true
+            # Enable profiling in the debug toolbar.
+            profiling: true
+        workspace: default
+        username: admin
+        password: admin
+
+cmf_routing:
+    chain:
+        routers_by_id:
+            cmf_routing.dynamic_router: 20
+            router.default: 100
+    dynamic:
+        enabled: true
+        persistence:
+            phpcr:
+                route_basepath: /cms/routes
+                use_sonata_admin: false
+        controllers_by_class:
+            AppBundle\Document\Page: AppBundle\Controller\DefaultController::pageAction
+            AppBundle\Document\Post: AppBundle\Controller\DefaultController::postAction
+
+cmf_routing_auto:
+    persistence:
+        phpcr:
+            enabled: true
