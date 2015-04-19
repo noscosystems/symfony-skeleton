@@ -5,3 +5,5 @@ homepage:
 make_homepage:
     path: /_cms/make_homepage/{id}
     defaults: { _controller: AppBundle:Default:makeHomepage }
+    requirements:
+        id: ".+"
