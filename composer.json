@@ -1,53 +1,53 @@
 {
-    "name": "symfony/framework-standard-edition",
-    "license": "proprietary",
-    "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "name":                                             "symfony/framework-standard-edition",
+    "license":                                          "proprietary",
+    "type":                                             "project",
+    "description":                                      "The \"Symfony Standard Edition\" distribution",
     "autoload": {
         "psr-4": {
-            "AppBundle\\": "src/AppBundle/",
-            "Nosco\\Bundles\\": "src/"
+            "AppBundle\\":                              "src/AppBundle/",
+            "Nosco\\Bundles\\":                         "src/"
         }
     },
     "require": {
-        "symfony/symfony": "2.6.*",
-        "sensio/distribution-bundle": "~3.0,>=3.0.12",
-        "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
-        "symfony/swiftmailer-bundle": "~2.3",
-        "symfony/monolog-bundle": "~2.4",
-        "twig/extensions": "~1.0",
+        "symfony/symfony":                              "2.6.*",
+        "sensio/distribution-bundle":                   "~3.0,>=3.0.12",
+        "sensio/framework-extra-bundle":                "~3.0,>=3.0.2",
+        "symfony/swiftmailer-bundle":                   "~2.3",
+        "symfony/monolog-bundle":                       "~2.4",
+        "twig/extensions":                              "~1.0",
 
-        "doctrine/orm": "~2.2,>=2.2.3,<2.5",
-        "doctrine/dbal": "<2.5",
-        "doctrine/doctrine-bundle": "~1.2",
-        "knplabs/doctrine-behaviors": "~1.0",
+        "doctrine/orm":                                 "~2.2,>=2.2.3,<2.5",
+        "doctrine/dbal":                                "<2.5",
+        "doctrine/doctrine-bundle":                     "~1.2",
+        "knplabs/doctrine-behaviors":                   "~1.0",
 
         "friendsofsymfony/user-bundle":                 "~1.3",
         "friendsofsymfony/oauth-server-bundle":         "~1.4",
         "jms/serializer-bundle":                        "~0.13",
         "friendsofsymfony/rest-bundle":                 "~1.5",
 
-        "symfony/assetic-bundle": "~2.3",
-        "twbs/bootstrap": "~3.0",
-        "packagist/yuicompressor-bin": "*",
-        "packagist/closurecompiler-bin": "*",
+        "symfony/assetic-bundle":                       "~2.3",
+        "twbs/bootstrap":                               "~3.0",
+        "packagist/yuicompressor-bin":                  "*",
+        "packagist/closurecompiler-bin":                "*",
 
-        "incenteev/composer-parameter-handler": "~2.0",
-        "vlucas/phpdotenv": "~1.1",
-        "php": ">=5.3.3"
+        "incenteev/composer-parameter-handler":         "~2.0",
+        "vlucas/phpdotenv":                             "~1.1",
+        "php":                                          ">=5.3.3"
     },
     "require-dev": {
-        "sensio/generator-bundle": "~2.3",
+        "sensio/generator-bundle":                      "~2.3",
 
-        "squizlabs/php_codesniffer": "~2.1",
+        "squizlabs/php_codesniffer":                    "~2.1",
         "object-calisthenics/phpcs-calisthenics-rules": "~1",
 
-        "phpunit/phpunit": "~4.5",
-        "phpunit/php-invoker": "~1.1",
-        "humbug/humbug": "*",
+        "phpunit/phpunit":                              "~4.5",
+        "phpunit/php-invoker":                          "~1.1",
+        "humbug/humbug":                                "*",
 
-        "behat/behat": "~3.0",
-        "behat/symfony2-extension": "~2.0"
+        "behat/behat":                                  "~3.0",
+        "behat/symfony2-extension":                     "~2.0"
     },
     "scripts": {
         "post-install-cmd": [
@@ -65,18 +65,18 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ]
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
+    "minimum-stability":                                "dev",
+    "prefer-stable":                                    true,
     "config": {
-        "bin-dir": "bin",
-        "preferred-install": "dist"
+        "bin-dir":                                      "bin",
+        "preferred-install":                            "dist"
     },
     "extra": {
-        "symfony-app-dir": "app",
-        "symfony-web-dir": "public",
-        "symfony-assets-install": "symlink",
+        "symfony-app-dir":                              "app",
+        "symfony-web-dir":                              "public",
+        "symfony-assets-install":                       "symlink",
         "incenteev-parameters": {
-            "file": "app/config/parameters.yml"
+            "file":                                     "app/config/parameters.yml"
         }
     }
 }
