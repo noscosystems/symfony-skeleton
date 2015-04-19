@@ -11,11 +11,24 @@ use AppBundle\Document\Post;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/app/example", name="homepage")
+     * Action: Homepage
+     *
+     * @access public
+     * @Route("/")
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        return $this->render('default/index.html.twig');
+        $dm = $this->get('doctrine_phpcr')->getManager();
+        $site = $dm->find('AppBundle\Document\Site', '/cms');
+        $homepage = $site->getHomepage();
+        if (!$homepage) {
+            throw $this->createNotFoundException('No homepage configured');
+        }
+        return $this->forward('AppBundle:Default:page', array(
+            'contentDocument' => $homepage
+        ));
     }
 
     /**
@@ -49,5 +62,29 @@ class DefaultController extends Controller
         return $this->render('AppBundle:Default:post.html.twig', [
             'post' => $contentDocument,
         ]);
+    }
+
+    /**
+     * @Route(
+     *   name="make_homepage",
+     *   pattern="/_cms/make_homepage/{id}",
+     *   requirements={"id": ".+"}
+     * )
+     */
+    public function makeHomepageAction($id)
+    {
+        $dm = $this->get('doctrine_phpcr')->getManager();
+        $site = $dm->find(null, '/cms');
+        if(!$site) {
+            throw $this->createNotFoundException('Could not find basic CMS object!');
+        }
+        $page = $dm->find(null, $id);
+        $site->setHomepage($page);
+        $dm->persist($site);
+        $dm->flush();
+
+        return $this->redirect($this->generateUrl('admin_app_page_edit', [
+            'id' => $page->getId(),
+        ]));
     }
 }

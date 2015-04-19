@@ -1,12 +1,9 @@
 services:
 
-    app.basic_cms.phpcr.initializer:
-        class: Doctrine\Bundle\PHPCRBundle\Initializer\GenericInitializer
-        arguments:
-            - My custom initializer
-            - ["/cms/pages", "/cms/posts", "/cms/routes"]
+    app.basic_cms.phpcr.initializer.site:
+        class: AppBundle\Initializer\SiteInitializer
         tags:
-            - { name: doctrine_phpcr.initializer }
+            - { name: doctrine_phpcr.initializer, priority: 50 }
 
     app.basic_cms.admin.page:
         class: AppBundle\Admin\PageAdmin
