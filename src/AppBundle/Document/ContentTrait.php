@@ -34,6 +34,13 @@ trait ContentTrait
      */
     protected $content;
 
+    /**
+     * @access protected
+     * @PHPCR\Referrers(
+     *     referringDocument="Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route",
+     *     referencedBy="content"
+     * )
+     */
     protected $routes;
 
     /**
