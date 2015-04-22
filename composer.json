@@ -32,6 +32,10 @@
         "packagist/yuicompressor-bin": "*",
         "packagist/closurecompiler-bin": "*",
 
+        "predis/predis": "~0.8",
+        "snc/redis-bundle": "~1.1",
+        "chrisboulton/php-resque": "~1.2",
+
         "incenteev/composer-parameter-handler": "~2.0",
         "vlucas/phpdotenv": "~1.1",
         "php": ">=5.3.3"
@@ -48,6 +52,9 @@
 
         "behat/behat": "~3.0",
         "behat/symfony2-extension": "~2.0"
+    },
+    "suggest": {
+        "ext-redis": "to replace Predis for fast, performant communications with a Redis server during production"
     },
     "scripts": {
         "post-install-cmd": [

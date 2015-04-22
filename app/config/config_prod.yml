@@ -23,3 +23,25 @@ monolog:
             level: debug
         console:
             type:  console
+
+snc_redis:
+    clients:
+        default:
+            type: phpredis
+            # We currently only have one client which is used for everything, pass in an
+            # array of DSNs if you wish to scale.
+            dsn: %redis.dsn%
+            logging: %kernel.debug%
+            options:
+                connection_timeout: 2
+                read_write_timeout: 6
+    # Save session data in Redis instead of the filesystem, which is the PHP default.
+    session:
+        client: default
+        use_as_default: true
+    # Save Doctrine's cache in Redis instead of the filesystem.
+    doctrine:
+        metadata_cache:
+            client: default
+        result_cache:
+            client: default

@@ -22,3 +22,5 @@ parameters:
     # Engines:
     nodejs_path:       /usr/bin/nodejs
     java_path:         /usr/bin/java
+
+    redis.dsn:         redis://localhost

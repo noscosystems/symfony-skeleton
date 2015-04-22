@@ -78,3 +78,24 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+snc_redis:
+    clients:
+        default:
+            # Use Predis (pure PHP) for development, and phpredis (C extension) for production.
+            type: phpredis
+            alias: default
+            # We currently only have one client which is used for everything, pass in an
+            # array of DSNs if you wish to scale.
+            dsn: %redis.dsn%
+            logging: %kernel.debug%
+            options:
+                connection_timeout: 10
+                connection_persistent: true
+                read_write_timeout: 30
+                throw_errors: true
+                replication: true
+    # Don't add anymore configuration settings here; add them specifically to the production
+    # configuration so that they aren't added during development (which is great for people
+    # who are STILL using Windows - there is no way I can be bothered to figure out how to setup
+    # anything on Windows, let alone Redis).
