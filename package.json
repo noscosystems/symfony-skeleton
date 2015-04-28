@@ -5,6 +5,7 @@
         "url":   "http://zanderbaldwin.com"
     },
     "dependencies": {
-        "less":  "~1"
+        "less":  "~1",
+        "react-tools": "~0.13"
     }
 }
