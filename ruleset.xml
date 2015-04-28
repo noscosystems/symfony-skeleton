@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Express Prints">
+    <description>Project Coding Standard</description>
+    <rule ref="PSR2" />
+    <rule ref="./vendor/object-calisthenics/phpcs-calisthenics-rules/ObjectCalisthenics/ruleset.xml">
+        <exclude name="Squiz.Commenting.VariableComment" />
+        <exclude name="Squiz.Commenting.FunctionComment" />
+    </rule>
+</ruleset>
