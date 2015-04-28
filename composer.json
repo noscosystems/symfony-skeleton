@@ -28,6 +28,7 @@
         "friendsofsymfony/rest-bundle":                 "~1.5",
 
         "symfony/assetic-bundle": "~2.3",
+        "kriswallsmith/spork": "~0.2",
         "twbs/bootstrap": "~3.0",
         "packagist/yuicompressor-bin": "*",
         "packagist/closurecompiler-bin": "*",
@@ -35,6 +36,7 @@
         "predis/predis": "~0.8",
         "snc/redis-bundle": "~1.1",
         "chrisboulton/php-resque": "~1.2",
+        "friendsofsymfony/elastica-bundle": "~3.1",
 
         "incenteev/composer-parameter-handler": "~2.0",
         "vlucas/phpdotenv": "~1.1",
